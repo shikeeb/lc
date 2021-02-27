@@ -102,15 +102,15 @@ class AutocompleteSystem {
         }
     }
     
-    private List<String> filterList(List<Trie> rowList) {
+    private List<String> filterList(List<Trie> nodeList) {
         List<String> result = new ArrayList<>();
-        if (rowList.size() == 0) {
+        if (nodeList.size() == 0) {
             return result;
         }
         
-        Collections.sort(rowList, Collections.reverseOrder()); //largest first (descending order)
-        for (int i = 0; i < Math.min(rowList.size(), RESULT_SIZE); i++) {
-            result.add(rowList.get(i).word);
+        Collections.sort(nodeList, Collections.reverseOrder()); //largest first (descending order)
+        for (int i = 0; i < Math.min(nodeList.size(), RESULT_SIZE); i++) {
+            result.add(nodeList.get(i).word);
         }
         return result;
     }
